@@ -20,7 +20,9 @@
     "noFallthroughCasesInSwitch": true,
     "useUnknownInCatchVariables": false,
     "useDefineForClassFields": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+
+    "skipLibCheck": true
   },
 
   "include": ["src/**/*", "src/**/*.json"],

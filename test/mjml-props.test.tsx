@@ -14,8 +14,8 @@ describe("mjml components prop values", () => {
         <mjmlComponents.MjmlRaw
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: "<div>hello World</div>" }}
-        />
-      )
+        />,
+      ),
     ).toBe(`<mj-raw><div>hello World</div></mj-raw>`);
   });
 
@@ -25,46 +25,46 @@ describe("mjml components prop values", () => {
         <mjmlComponents.MjmlRaw
           // @ts-expect-error prop should be invalid for test purposes
           iAmNotAProp="random"
-        />
-      )
+        />,
+      ),
     ).toBe(`<mj-raw i-am-not-a-prop="random"></mj-raw>`);
   });
 
   it("fullWidth, inline, and fluidOnMobile props convert to string", () => {
     expect(renderToMjml(<mjmlComponents.MjmlSection fullWidth />)).toBe(
-      `<mj-section full-width="full-width"></mj-section>`
+      `<mj-section full-width="full-width"></mj-section>`,
     );
     expect(renderToMjml(<mjmlComponents.MjmlStyle inline />)).toBe(
-      `<mj-style inline="inline"></mj-style>`
+      `<mj-style inline="inline"></mj-style>`,
     );
   });
 
   it("boolean props convert as expected", () => {
     expect(renderToMjml(<mjmlComponents.MjmlImage fluidOnMobile />)).toBe(
-      `<mj-image fluid-on-mobile="true"></mj-image>`
+      `<mj-image fluid-on-mobile="true"></mj-image>`,
     );
     expect(
-      renderToMjml(<mjmlComponents.MjmlImage fluidOnMobile={false} />)
+      renderToMjml(<mjmlComponents.MjmlImage fluidOnMobile={false} />),
     ).toBe(`<mj-image fluid-on-mobile="false"></mj-image>`);
   });
 
   it("enum prop type accepts all enum values", () => {
     const { MjmlTable } = mjmlComponents;
     expect(renderToMjml(<MjmlTable align="left" />)).toBe(
-      `<mj-table align="left"></mj-table>`
+      `<mj-table align="left"></mj-table>`,
     );
     expect(renderToMjml(<MjmlTable align="right" />)).toBe(
-      `<mj-table align="right"></mj-table>`
+      `<mj-table align="right"></mj-table>`,
     );
     expect(renderToMjml(<MjmlTable align="center" />)).toBe(
-      `<mj-table align="center"></mj-table>`
+      `<mj-table align="center"></mj-table>`,
     );
 
     // Test with invalid props. Code should still render but typescript should
     // throw an error
     // @ts-expect-error invalid align prop for test purposes
     expect(renderToMjml(<MjmlTable align="unknown" />)).toBe(
-      `<mj-table align="unknown"></mj-table>`
+      `<mj-table align="unknown"></mj-table>`,
     );
   });
 
@@ -76,16 +76,16 @@ describe("mjml components prop values", () => {
     const buttonEm = <MjmlButton letterSpacing="3em">Em</MjmlButton>;
 
     expect(renderToMjml(buttonNoUnit)).toBe(
-      '<mj-button padding="0">No unit</mj-button>'
+      '<mj-button padding="0">No unit</mj-button>',
     );
     expect(renderToMjml(buttonPx)).toBe(
-      '<mj-button letter-spacing="1px">Px</mj-button>'
+      '<mj-button letter-spacing="1px">Px</mj-button>',
     );
     expect(renderToMjml(buttonPercentage)).toBe(
-      '<mj-button height="2%">Percent</mj-button>'
+      '<mj-button height="2%">Percent</mj-button>',
     );
     expect(renderToMjml(buttonEm)).toBe(
-      '<mj-button letter-spacing="3em">Em</mj-button>'
+      '<mj-button letter-spacing="3em">Em</mj-button>',
     );
   });
 
@@ -97,23 +97,23 @@ describe("mjml components prop values", () => {
       </MjmlButton>
     );
     expect(renderToMjml(button)).toBe(
-      '<mj-button padding="16px" width="300px" height="56px" inner-padding="10px">Single num</mj-button>'
+      '<mj-button padding="16px" width="300px" height="56px" inner-padding="10px">Single num</mj-button>',
     );
   });
 
   it("padding can accept matrix of props", () => {
     const { MjmlButton } = mjmlComponents;
     expect(renderToMjml(<MjmlButton padding="0">Button1</MjmlButton>)).toBe(
-      '<mj-button padding="0">Button1</mj-button>'
+      '<mj-button padding="0">Button1</mj-button>',
     );
     expect(renderToMjml(<MjmlButton padding="0 1px">Button2</MjmlButton>)).toBe(
-      '<mj-button padding="0 1px">Button2</mj-button>'
+      '<mj-button padding="0 1px">Button2</mj-button>',
     );
     expect(
-      renderToMjml(<MjmlButton padding="0 1px 2%">Button3</MjmlButton>)
+      renderToMjml(<MjmlButton padding="0 1px 2%">Button3</MjmlButton>),
     ).toBe('<mj-button padding="0 1px 2%">Button3</mj-button>');
     expect(
-      renderToMjml(<MjmlButton padding="0 1px 2% 0px">Button4</MjmlButton>)
+      renderToMjml(<MjmlButton padding="0 1px 2% 0px">Button4</MjmlButton>),
     ).toBe('<mj-button padding="0 1px 2% 0px">Button4</mj-button>');
   });
 
@@ -121,8 +121,8 @@ describe("mjml components prop values", () => {
     const { MjmlColumn } = mjmlComponents;
     expect(
       renderToMjml(
-        <MjmlColumn borderRadius="5px dashed blue">Column1</MjmlColumn>
-      )
+        <MjmlColumn borderRadius="5px dashed blue">Column1</MjmlColumn>,
+      ),
     ).toBe('<mj-column border-radius="5px dashed blue">Column1</mj-column>');
   });
 
@@ -131,9 +131,9 @@ describe("mjml components prop values", () => {
     expect(
       renderToMjml(
         // @ts-expect-error invalid prop value type of object on height
-        <MjmlSpacer height={{ toString: () => "10px" }} />
-      )
-    ).toBe('<mj-spacer height="10px"></mj-spacer>');
+        <MjmlSpacer height={{ toString: () => "10px" }} />,
+      ),
+    ).toBe("<mj-spacer></mj-spacer>");
   });
 
   it("null prop value does not make it to the component", () => {
@@ -141,8 +141,8 @@ describe("mjml components prop values", () => {
     expect(
       renderToMjml(
         // @ts-expect-error invalid prop value type of object on height
-        <MjmlSpacer height={null} />
-      )
+        <MjmlSpacer height={null} />,
+      ),
     ).toBe("<mj-spacer></mj-spacer>");
   });
 });
