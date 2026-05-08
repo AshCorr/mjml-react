@@ -43,6 +43,6 @@ export function MjmlNavbar({
   return React.createElement(
     "mj-navbar",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

@@ -32,6 +32,6 @@ export function MjmlCarouselImage({
   return React.createElement(
     "mj-carousel-image",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

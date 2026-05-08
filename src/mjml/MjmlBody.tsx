@@ -24,6 +24,6 @@ export function MjmlBody({
   return React.createElement(
     "mj-body",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

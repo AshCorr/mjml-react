@@ -39,6 +39,6 @@ export function MjmlCarousel({
   return React.createElement(
     "mj-carousel",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

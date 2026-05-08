@@ -45,6 +45,6 @@ export function MjmlWrapper({
   return React.createElement(
     "mj-wrapper",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

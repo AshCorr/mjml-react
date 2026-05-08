@@ -47,6 +47,6 @@ export function MjmlTable({
   return React.createElement(
     "mj-table",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

@@ -52,7 +52,7 @@ const reconciler = ReactReconciler({
       parent.content = (parent.content || "") + child;
     } else if (child.isReact) {
       const content = ReactDOMServer.renderToStaticMarkup(
-        React.createElement(child.type, child.props)
+        React.createElement(child.type, child.props),
       );
       parent.content = (parent.content || "") + content;
     } else {

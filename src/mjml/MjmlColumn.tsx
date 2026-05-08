@@ -43,6 +43,6 @@ export function MjmlColumn({
   return React.createElement(
     "mj-column",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

@@ -44,6 +44,6 @@ export function MjmlSection({
   return React.createElement(
     "mj-section",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

@@ -31,6 +31,6 @@ export function MjmlAccordionElement({
   return React.createElement(
     "mj-accordion-element",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

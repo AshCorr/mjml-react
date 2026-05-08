@@ -16,6 +16,6 @@ export function Mjml({ children, ...props }: IMjmlProps): React.JSX.Element {
   return React.createElement(
     "mjml",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

@@ -12,7 +12,7 @@ interface ConvertedHtml {
 
 export function render(
   email: React.ReactElement,
-  options: MJMLParsingOptions = {}
+  options: MJMLParsingOptions = {},
 ): Promise<ConvertedHtml> {
   const defaults: MJMLParsingOptions = {
     keepComments: false,

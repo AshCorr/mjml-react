@@ -21,6 +21,6 @@ export function MjmlPreview({
   return React.createElement(
     "mj-preview",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

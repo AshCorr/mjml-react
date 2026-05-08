@@ -22,6 +22,6 @@ export function MjmlRaw({
   return React.createElement(
     "mj-raw",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

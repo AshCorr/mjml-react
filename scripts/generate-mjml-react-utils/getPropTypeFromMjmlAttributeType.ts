@@ -20,7 +20,7 @@ export const ATTRIBUTES_TO_USE_CSSProperties_WITH = new Set([
  */
 export function getPropTypeFromMjmlAttributeType(
   attribute: string,
-  mjmlAttributeType: string
+  mjmlAttributeType: string,
 ): string {
   if (mjmlAttributeType === "boolean") {
     return "boolean";

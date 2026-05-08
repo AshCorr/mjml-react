@@ -20,6 +20,6 @@ export function MjmlHead({
   return React.createElement(
     "mj-head",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

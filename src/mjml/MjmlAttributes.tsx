@@ -20,6 +20,6 @@ export function MjmlAttributes({
   return React.createElement(
     "mj-attributes",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

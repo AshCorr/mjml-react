@@ -43,6 +43,6 @@ export function MjmlHero({
   return React.createElement(
     "mj-hero",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

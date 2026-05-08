@@ -28,9 +28,9 @@ describe("getPropTypeFromMjmlAttributeType", () => {
     "transforms mjmlType: $mjmlAttributeType into React type: $reactType",
     ({ mjmlAttributeType, reactType }) => {
       expect(getPropTypeFromMjmlAttributeType("n/a", mjmlAttributeType)).toBe(
-        reactType
+        reactType,
       );
-    }
+    },
   );
 
   describe("use CSSProperties for useful mjml types", () => {
@@ -41,7 +41,7 @@ describe("getPropTypeFromMjmlAttributeType", () => {
       (map, component) => {
         if (component.allowedAttributes !== undefined) {
           for (const [key, value] of Object.entries(
-            component.allowedAttributes
+            component.allowedAttributes,
           )) {
             if (map.get(key) === undefined) {
               map.set(key, new Set());
@@ -51,13 +51,13 @@ describe("getPropTypeFromMjmlAttributeType", () => {
         }
         return map;
       },
-      new Map<string, Set<string>>()
+      new Map<string, Set<string>>(),
     );
 
     const val = _.flatten(
       Array.from(ATTRIBUTES_TO_USE_CSSProperties_WITH).map((attribute) => {
         const allMjmlTypes = allMjmlTypesGroupedByAttribute.get(
-          _.kebabCase(attribute)
+          _.kebabCase(attribute),
         );
         if (allMjmlTypes === undefined) {
           // place a debug statement here to view the full allMjmlTypesGroupedByAttribute
@@ -68,36 +68,36 @@ describe("getPropTypeFromMjmlAttributeType", () => {
             ({
               mjmlType,
               attribute,
-            } as { mjmlType: string; attribute: string })
+            }) as { mjmlType: string; attribute: string },
         );
-      })
+      }),
     );
 
     test.each(val)(
       "mjml attribute $attribute with type $mjmlType becomes a CSSProperty",
       ({ mjmlType, attribute }) => {
         expect(getPropTypeFromMjmlAttributeType(attribute, mjmlType)).toContain(
-          "CSSProperties"
+          "CSSProperties",
         );
-      }
+      },
     );
 
     const cssAttribute = Array.from(ATTRIBUTES_TO_USE_CSSProperties_WITH)[0]!;
 
     test("CSSProperties preempt 'unit'", () => {
       expect(
-        getPropTypeFromMjmlAttributeType(cssAttribute, "unit(px)")
+        getPropTypeFromMjmlAttributeType(cssAttribute, "unit(px)"),
       ).toContain("CSSProperties");
     });
     test("CSSProperties does not preempt 'boolean', 'integer', or 'enum'", () => {
       expect(
-        getPropTypeFromMjmlAttributeType(cssAttribute, "boolean")
+        getPropTypeFromMjmlAttributeType(cssAttribute, "boolean"),
       ).toContain("boolean");
       expect(
-        getPropTypeFromMjmlAttributeType(cssAttribute, "integer")
+        getPropTypeFromMjmlAttributeType(cssAttribute, "integer"),
       ).toContain("number");
       expect(
-        getPropTypeFromMjmlAttributeType(cssAttribute, "enum(x,y,z)")
+        getPropTypeFromMjmlAttributeType(cssAttribute, "enum(x,y,z)"),
       ).toContain('"x"');
     });
   });

@@ -21,6 +21,6 @@ export function MjmlTitle({
   return React.createElement(
     "mj-title",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

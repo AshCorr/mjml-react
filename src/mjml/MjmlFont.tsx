@@ -22,6 +22,6 @@ export function MjmlFont({
   return React.createElement(
     "mj-font",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

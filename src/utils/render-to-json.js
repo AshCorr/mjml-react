@@ -8,7 +8,7 @@ const reconciler = ReactReconciler({
   supportsMutation: true,
   isPrimaryRenderer: true,
   createTextInstance(
-    text /* rootContainerInstance, hostContext, internalInstanceHandle,*/
+    text /* rootContainerInstance, hostContext, internalInstanceHandle,*/,
   ) {
     return text;
   },
@@ -101,7 +101,7 @@ function toReactElement(element) {
     element.type,
     element.props,
     element.children.map((child) =>
-      typeof child === "string" ? child : toReactElement(child)
-    )
+      typeof child === "string" ? child : toReactElement(child),
+    ),
   );
 }

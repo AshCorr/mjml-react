@@ -18,6 +18,6 @@ export function MjmlSelector({
   return React.createElement(
     "mj-selector",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

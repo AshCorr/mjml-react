@@ -14,6 +14,6 @@ export interface IMjmlBreakpointProps {
 export function MjmlBreakpoint(props: IMjmlBreakpointProps): React.JSX.Element {
   return React.createElement(
     "mj-breakpoint",
-    convertPropsToMjmlAttributes(props)
+    convertPropsToMjmlAttributes(props),
   );
 }

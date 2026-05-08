@@ -44,7 +44,7 @@ describe("render()", () => {
       </Mjml>
     );
     expect(() => render(email)).rejects.toThrow(
-      "Element div doesn't exist or is not registered"
+      "Element div doesn't exist or is not registered",
     );
   });
 
@@ -62,7 +62,7 @@ describe("render()", () => {
     });
     expect(errors).toHaveLength(1);
     expect(errors![0]!.message).toContain(
-      "Element div doesn't exist or is not registered"
+      "Element div doesn't exist or is not registered",
     );
   });
 

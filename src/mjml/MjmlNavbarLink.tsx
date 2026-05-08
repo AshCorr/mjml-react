@@ -42,6 +42,6 @@ export function MjmlNavbarLink({
   return React.createElement(
     "mj-navbar-link",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

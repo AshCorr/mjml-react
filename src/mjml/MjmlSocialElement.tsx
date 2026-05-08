@@ -55,6 +55,6 @@ export function MjmlSocialElement({
   return React.createElement(
     "mj-social-element",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

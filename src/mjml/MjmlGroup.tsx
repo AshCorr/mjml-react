@@ -25,6 +25,6 @@ export function MjmlGroup({
   return React.createElement(
     "mj-group",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

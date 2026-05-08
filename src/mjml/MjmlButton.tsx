@@ -59,6 +59,6 @@ export function MjmlButton({
   return React.createElement(
     "mj-button",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

@@ -57,7 +57,7 @@ import { MJMLParseResults } from "mjml-core";
 import React from "react";
 
 export function renderReactToMjml(
-  email: React.ReactElement
+  email: React.ReactElement,
 ): Promise<MJMLParseResults> {
   return mjml2html(renderToMjml(email));
 }
@@ -105,7 +105,7 @@ const { html, errors } = await renderReactToMjml(
       </MjmlSection>
     </MjmlBody>
   </Mjml>,
-  { validationLevel: "soft" }
+  { validationLevel: "soft" },
 );
 ```
 
@@ -176,7 +176,7 @@ namedEntityToHexCode(html);
 fixConditionalComment(
   "<!--[if mso]><div>Hello World</div><![endif]-->",
   "Hello",
-  "if IE"
+  "if IE",
 );
 // <!--[if IE]><div>Hello World</div><![endif]-->
 ```

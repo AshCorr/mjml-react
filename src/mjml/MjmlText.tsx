@@ -43,6 +43,6 @@ export function MjmlText({
   return React.createElement(
     "mj-text",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }

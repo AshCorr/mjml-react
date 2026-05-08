@@ -32,6 +32,6 @@ export function MjmlAccordionTitle({
   return React.createElement(
     "mj-accordion-title",
     convertPropsToMjmlAttributes(props),
-    children
+    children,
   );
 }
