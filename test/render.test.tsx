@@ -43,7 +43,7 @@ describe("render()", () => {
         </MjmlBody>
       </Mjml>
     );
-    expect(() => render(email)).rejects.toThrow(
+    await expect(() => render(email)).rejects.toThrow(
       "Element div doesn't exist or is not registered"
     );
   });
