@@ -45,7 +45,6 @@
     "@semantic-release/github": "^12.0.0",
     "@semantic-release/npm": "^13.1.5",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
-    "@types/html-minifier": "^4.0.2",
     "@types/jest": "^29.5.14",
     "@types/lodash.camelcase": "^4.3.9",
     "@types/lodash.kebabcase": "^4.1.9",
