@@ -121,7 +121,7 @@ And as the result you will get a nice looking email HTML (works in mobile too!)
 {
   keepComments: false,
   beautify: false,
-  minify: true,
+  minify: false,
   minifyOptions: {
     collapseWhitespace: true,
     minifyCss: true,
