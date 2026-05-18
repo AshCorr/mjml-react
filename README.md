@@ -123,12 +123,11 @@ And as the result you will get a nice looking email HTML (works in mobile too!)
   beautify: false,
   minify: true,
   minifyOptions: {
-      collapseWhitespace: true,
-      minifyCss: true,
-      removeComments: 'all',
-      removeEmptyAttributes: true,
-      lowerCaseTags: true,
-  }
+    collapseWhitespace: true,
+    minifyCss: true,
+    removeComments: "safe",
+    removeEmptyAttributes: true,
+  },
   validationLevel: 'strict'
 }
 ```
