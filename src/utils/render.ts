@@ -21,7 +21,7 @@ export function render(
     minifyOptions: {
       collapseWhitespace: true,
       minifyCss: true,
-      removeComments: "all",
+      removeComments: "safe",
       removeEmptyAttributes: true,
     },
   };
